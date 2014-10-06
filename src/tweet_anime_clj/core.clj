@@ -1,5 +1,6 @@
 (ns tweet-anime-clj.core
   (:require [tweet-anime-clj.animemap :refer :all])
+  (:use [timely.core])
   (:import [twitter4j TwitterFactory Query TwitterException]))
 
 ;; tweet (String -> Unit)
@@ -14,4 +15,7 @@
   (< count content))
 
 (defn -main []
-  (doall (map #(tweet %) content)))
+  (start-scheduler)
+  (scheduled-item (every 1
+                       :minutes)
+  (doall (map #(tweet %) content))))

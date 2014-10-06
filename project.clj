@@ -6,5 +6,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.twitter4j/twitter4j-core "3.0.5"]
                  [org.clojure/data.json "0.2.5"]
-                 [com.draines/postal "1.11.1"]]
+                 [com.draines/postal "1.11.1"]
+                 [factual/timely "0.0.3"]]
   :main tweet-anime-clj.core)
